@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ModalDrink {
+  font-family: $primary-font;
+  color: $neutral-color;
+  padding: 10px;
+
+  .ModalDrink_button {
+    background-color: transparent;
+    color: $active-color;
+    border: none;
+    cursor: pointer;
+  }
+
+  .ModalDrink_card {
+    @include flex-container(row, center, flex-start, 30px);
+    margin-top: 30px;
+
+    img {
+      width: 600px;
+      height: 600px;
+      border-radius: 50px;
+      border-top-left-radius: 200px;
+      border-right: 2px solid $active-color;
+      border-bottom: 2px solid $active-color;
+    }
+
+    .SingleItem__text {
+      @include flex-container(column, flex-start, flex-start, 20px);
+
+      h1 {
+        font-family: $secondary-font;
+        letter-spacing: 0.05em;
+        font-size: 40px;
+      }
+
+      p {
+        color: $disabled-color;
+        margin-top: -10px;
+      }
+
+      .SingleItem__text--lists {
+        list-style: decimal inside;
+
+        h3 {
+          font-weight: 700;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}

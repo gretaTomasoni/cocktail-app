@@ -3,7 +3,7 @@
 
 .Navbar {
   @include flex-container(row, space-between, center);
-  padding: 6px 12px;
+  padding: 20px 12px;
 
   .Navbar__logo {
     font-family: $secondary-font;

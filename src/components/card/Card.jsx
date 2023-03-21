@@ -1,21 +1,24 @@
 import "./index.scss";
 
-const Card = ({ data }) => {
-  // const getIngredients = () => {
-  //   let ingredients = [];
-  //   for (let i = 1; i <= 15; i++) {
-  //     let ingredient = data[`strIngredient${i}`];
-  //     if (ingredient !== null) {
-  //       ingredients.push(ingredient);
-  //     }
-  //   }
-  //   return ingredients;
-  // };
+const Card = ({ data, setSingleItemContext }) => {
+  const onHandleClick = () =>
+    setSingleItemContext((prev) => ({
+      ...prev,
+      payload: data,
+      isVisible: true,
+    }));
+
   return (
     <div className="Card">
-      <img src={data.strDrinkThumb} alt={data.strDrink} />
+      <img
+        onClick={onHandleClick}
+        src={data.strDrinkThumb}
+        alt={data.strDrink}
+      />
       <div className="Card__text">
-        <h2 className="Card__text--title">{data.strDrink}</h2>
+        <h2 onClick={onHandleClick} className="Card__text--title">
+          {data.strDrink}
+        </h2>
       </div>
     </div>
   );
