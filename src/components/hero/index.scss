@@ -1,41 +1,36 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .Hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-container(column);
 
-  hr {
-    width: 98%;
-    border: 0;
-    border-bottom: 1px dotted #373737;
-    border-width: 3px;
-    margin-top: -8px;
-  }
-
-  h1 {
-    font-size: 3rem;
+  .Hero_title {
+    font-family: $secondary-font;
+    font-size: 5rem;
+    color: $neutral-color;
   }
 
   .Hero__second__list {
-    display: flex;
-    gap: 40px;
+    @include flex-container(row, center, center, 40px);
     padding: 0;
     list-style-type: none;
     margin-bottom: 50px;
 
     li {
+      font-family: $primary-font;
       padding: 4px 8px;
+      border: 1px solid transparent;
       cursor: pointer;
-      border-bottom: 1px solid black;
+      color: $neutral-color;
 
       &:hover {
-        background-color: black;
-        color: white;
+        border: 1px solid $active-color;
       }
     }
 
     .active {
-      background-color: black;
-      color: white;
+      background-color: $active-color;
+      color: $primary-color;
     }
   }
 }

@@ -1,18 +1,19 @@
+import { FiSearch } from "react-icons/fi";
+
 import "./index.scss";
 
 const Navbar = () => {
   return (
     <div className="Navbar">
+      <span className="Navbar__logo">Cocktail</span>
       <ul>
         <li>Home</li>
-        <li>About</li>
-        <li>Mission</li>
-        <li>Contacts</li>
+        <li>Popular</li>
+        <li>Search</li>
+        <li>Collections</li>
+        <li>Articles</li>
       </ul>
-      <img
-        src="https://purepng.com/public/uploads/large/purepng.com-cocktailcocktaildrinkgeneric-alcoholic-mixed-drinkbeverage-1411527240706fzrjn.png"
-        alt="logo"
-      />
+      <FiSearch className="Navbar__search" />
     </div>
   );
 };

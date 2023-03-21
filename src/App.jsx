@@ -8,7 +8,7 @@ import "./App.scss";
 
 const App = () => {
   const [cocktailList, setCocktailList] = useState([]);
-  const [category, setCategory] = useState("Ordinary Drink");
+  const [category, setCategory] = useState("Cocktail");
 
   useEffect(() => {
     GET("/search.php?f=m").then(({ drinks }) => {

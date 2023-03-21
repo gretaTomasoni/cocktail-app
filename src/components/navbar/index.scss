@@ -1,14 +1,23 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .Navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-container(row, space-between, center);
   padding: 6px 12px;
 
+  .Navbar__logo {
+    font-family: $secondary-font;
+    color: $neutral-color;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+  }
+
   ul {
-    display: flex;
-    gap: 20px;
-    padding: 0;
+    @include flex-container(row, center, center, 40px);
     list-style-type: none;
+    font-family: $primary-font;
+    color: $disabled-color;
+    padding: 0;
 
     li {
       font-weight: bold;
@@ -16,10 +25,7 @@
     }
   }
 
-  img {
-    width: 20px;
-    height: 20px;
-    padding: 10px;
-    background-color: rgb(255, 255, 142);
+  .Navbar__search {
+    color: $disabled-color;
   }
 }

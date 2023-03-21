@@ -7,20 +7,21 @@ const Hero = ({ category, setCategory }) => {
 
   return (
     <div className="Hero">
-      <h1>Cocktail by Edgemony</h1>
-      <hr />
+      <h1 className="Hero_title">
+        Find <em className="italic">your</em> best cocktail
+      </h1>
       <ul className="Hero__second__list">
-        <li
-          onClick={() => onHandleClick("Ordinary Drink")}
-          className={category === "Ordinary Drink" && "active"}
-        >
-          Ordinary Drink
-        </li>
         <li
           onClick={() => onHandleClick("Cocktail")}
           className={category === "Cocktail" && "active"}
         >
           Cocktail
+        </li>
+        <li
+          onClick={() => onHandleClick("Ordinary Drink")}
+          className={category === "Ordinary Drink" && "active"}
+        >
+          Ordinary Drink
         </li>
         <li
           onClick={() => onHandleClick("Shot")}
