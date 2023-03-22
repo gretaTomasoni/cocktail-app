@@ -5,7 +5,7 @@
   @include flex-container(row, space-between, center);
   padding: 20px 12px;
 
-  .Navbar__logo {
+  .logo {
     font-family: $secondary-font;
     color: $neutral-color;
     font-size: 24px;
@@ -25,7 +25,7 @@
     }
   }
 
-  .Navbar__search {
+  .search {
     color: $disabled-color;
   }
 }

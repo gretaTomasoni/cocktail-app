@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Hero = ({ category, setCategory }) => {
   const onHandleClick = (value) => {
@@ -6,38 +6,38 @@ const Hero = ({ category, setCategory }) => {
   };
 
   return (
-    <div className="Hero">
-      <h1 className="Hero_title">
-        Find <em className="italic">your</em> best cocktail
+    <div className={styles.Hero}>
+      <h1 className={styles.title}>
+        Find <em>your</em> best cocktail
       </h1>
-      <ul className="Hero__second__list">
+      <ul className={styles.secondList}>
         <li
           onClick={() => onHandleClick("Cocktail")}
-          className={category === "Cocktail" && "active"}
+          className={category === "Cocktail" && styles.active}
         >
           Cocktail
         </li>
         <li
           onClick={() => onHandleClick("Ordinary Drink")}
-          className={category === "Ordinary Drink" && "active"}
+          className={category === "Ordinary Drink" && styles.active}
         >
           Ordinary Drink
         </li>
         <li
           onClick={() => onHandleClick("Shot")}
-          className={category === "Shot" && "active"}
+          className={category === "Shot" && styles.active}
         >
           Shot
         </li>
         <li
           onClick={() => onHandleClick("Punch / Party Drink")}
-          className={category === "Punch / Party Drink" && "active"}
+          className={category === "Punch / Party Drink" && styles.active}
         >
           Punch
         </li>
         <li
           onClick={() => onHandleClick("Coffee / Tea")}
-          className={category === "Coffee / Tea" && "active"}
+          className={category === "Coffee / Tea" && styles.active}
         >
           Coffee
         </li>

@@ -5,7 +5,7 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import Content from "./components/content";
 import ModalDrink from "./components/modalDrink";
-import "./App.scss";
+import styles from "./App.module.scss";
 
 const App = () => {
   const [cocktailList, setCocktailList] = useState([]);
@@ -22,7 +22,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Navbar />
       {singleItemContext.isVisible ? (
         <ModalDrink

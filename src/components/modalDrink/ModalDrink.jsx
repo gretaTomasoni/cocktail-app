@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const ModalDrink = ({ data, setSingleItemContext }) => {
   const onHandleClick = () =>
@@ -18,28 +18,28 @@ const ModalDrink = ({ data, setSingleItemContext }) => {
     return ingredients;
   };
   return (
-    <div className="ModalDrink">
+    <div className={styles.ModalDrink}>
       <div>
-        <button onClick={onHandleClick} className="ModalDrink_button">
+        <button onClick={onHandleClick} className={styles.button}>
           ← Go back
         </button>
       </div>
-      <div className="ModalDrink_card">
+      <div className={styles.card}>
         <img src={data.strDrinkThumb} alt={data.idDrink} />
-        <div className="SingleItem__text">
+        <div className={styles.text}>
           <h1>{data.strDrink}</h1>
           <p>Glass: {data.strGlass}</p>
-          <ul className="SingleItem__text--lists">
+          <ul className={styles.list}>
             <h3>Ingredients:</h3>
             {getIngredients().map((item) => (
               <li>{item}</li>
             ))}
           </ul>
-          <ul className="SingleItem__text--lists">
+          <ul className={styles.list}>
             <h3>Instructions:</h3>
             <span>{data.strInstructions}</span>
           </ul>
-          <div className="SingleItem__image--carousel">
+          <div className={styles.carouselButton}>
             <button>Previous</button>
             <button>Next</button>
           </div>

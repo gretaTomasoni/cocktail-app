@@ -12,14 +12,14 @@
   color: $neutral-color;
   padding: 10px;
 
-  .ModalDrink_button {
+  .button {
     background-color: transparent;
     color: $active-color;
     border: none;
     cursor: pointer;
   }
 
-  .ModalDrink_card {
+  .card {
     @include flex-container(row, center, flex-start, 30px);
     margin-top: 30px;
 
@@ -32,7 +32,7 @@
       border-bottom: 2px solid $active-color;
     }
 
-    .SingleItem__text {
+    .text {
       @include flex-container(column, flex-start, flex-start, 20px);
 
       h1 {
@@ -46,7 +46,7 @@
         margin-top: -10px;
       }
 
-      .SingleItem__text--lists {
+      .list {
         list-style: decimal inside;
 
         h3 {

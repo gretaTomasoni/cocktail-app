@@ -5,13 +5,13 @@
   @include flex-container(column, center, center, 40px);
   margin-top: 30px;
 
-  .Hero_title {
+  .title {
     font-family: $secondary-font;
     font-size: 5rem;
     color: $neutral-color;
   }
 
-  .Hero__second__list {
+  .secondList {
     @include flex-container(row, center, center, 40px);
     padding: 0;
     list-style-type: none;

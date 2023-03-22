@@ -1,11 +1,11 @@
 import { FiSearch } from "react-icons/fi";
 
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Navbar = () => {
   return (
-    <div className="Navbar">
-      <span className="Navbar__logo">Cocktail</span>
+    <div className={styles.Navbar}>
+      <span className={styles.logo}>Cocktail</span>
       <ul>
         <li>Home</li>
         <li>Popular</li>
@@ -13,7 +13,7 @@ const Navbar = () => {
         <li>Collections</li>
         <li>Articles</li>
       </ul>
-      <FiSearch className="Navbar__search" />
+      <FiSearch className={styles.search} />
     </div>
   );
 };
