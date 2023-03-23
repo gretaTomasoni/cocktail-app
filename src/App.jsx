@@ -5,6 +5,8 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import Content from "./components/content";
 import ModalDrink from "./components/modalDrink";
+import ModalReservation from "./components/modalReservation";
+import Popup from "./components/popup";
 import styles from "./App.module.scss";
 
 const App = () => {
@@ -14,28 +16,49 @@ const App = () => {
     isVisible: false,
     payload: {},
   });
+  const [letter, setLetter] = useState("m");
+  const [reservationVisibility, setReservationVisibility] = useState(false);
+  const [popupVisibility, setPopupVisibility] = useState(false);
 
   useEffect(() => {
-    GET("/search.php?f=m").then(({ drinks }) => {
+    GET(`/search.php?f=${letter}`).then(({ drinks }) => {
       setCocktailList(() => drinks);
     });
-  }, []);
+  }, [letter]);
 
   return (
     <div className={styles.App}>
-      <Navbar />
-      {singleItemContext.isVisible ? (
-        <ModalDrink
-          data={singleItemContext.payload}
-          setSingleItemContext={setSingleItemContext}
+      <Navbar
+        setReservationVisibility={setReservationVisibility}
+        reservationVisibility={reservationVisibility}
+      />
+      {reservationVisibility ? (
+        <ModalReservation
+          cocktailList={cocktailList}
+          setReservationVisibility={setReservationVisibility}
+          setPopupVisibility={setPopupVisibility}
         />
       ) : (
         <>
-          <Hero category={category} setCategory={setCategory} />
-          <Content
-            data={filteredList(cocktailList, "strCategory", category)}
-            setSingleItemContext={setSingleItemContext}
-          />
+          {singleItemContext.isVisible ? (
+            <ModalDrink
+              data={singleItemContext.payload}
+              setSingleItemContext={setSingleItemContext}
+            />
+          ) : (
+            <>
+              <Hero
+                category={category}
+                setCategory={setCategory}
+                setLetter={setLetter}
+              />
+              <Content
+                data={filteredList(cocktailList, "strCategory", category)}
+                setSingleItemContext={setSingleItemContext}
+              />
+              {popupVisibility && <Popup />}
+            </>
+          )}
         </>
       )}
     </div>

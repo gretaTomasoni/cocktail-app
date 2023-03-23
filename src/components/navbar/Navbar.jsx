@@ -1,8 +1,9 @@
-import { FiSearch } from "react-icons/fi";
-
 import styles from "./index.module.scss";
 
-const Navbar = () => {
+const Navbar = ({ setReservationVisibility, reservationVisibility }) => {
+  const onHandleClick = () => {
+    setReservationVisibility((prev) => !prev);
+  };
   return (
     <div className={styles.Navbar}>
       <span className={styles.logo}>Cocktail</span>
@@ -13,7 +14,17 @@ const Navbar = () => {
         <li>Collections</li>
         <li>Articles</li>
       </ul>
-      <FiSearch className={styles.search} />
+      <div>
+        <button className={styles.button} onClick={onHandleClick}>
+          {reservationVisibility ? (
+            <span>X</span>
+          ) : (
+            <>
+              <span>Cocktail</span> at home
+            </>
+          )}
+        </button>
+      </div>
     </div>
   );
 };

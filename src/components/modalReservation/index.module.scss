@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.ModalReservation {
+  @include flex-container(column, center, center, 20px);
+  background-color: $primary-color;
+  width: 100%;
+  color: $neutral-color;
+  padding: 10px 10px;
+  height: calc(100vh - 300px);
+
+  .title {
+    font-family: $primary-font;
+    margin-bottom: -10px;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  .straw {
+    @include flex-container(row, center, center, 10px);
+    margin-top: 20px;
+
+    .label {
+      font-family: $primary-font;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  .button {
+    background-color: $active-color;
+    color: $neutral-color;
+    border: none;
+    padding: 5px 15px;
+    margin-top: 20px;
+    font-family: $primary-font;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
