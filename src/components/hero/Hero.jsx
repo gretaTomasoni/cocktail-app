@@ -1,5 +1,81 @@
 import { useState } from "react";
-import styles from "./index.module.scss";
+import styled, { css } from "styled-components";
+
+const HeroWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+`;
+
+const HeroTitle = styled.h1`
+  font-family: "DM Serif Display", serif;
+  font-size: 5rem;
+  color: #fafafa;
+`;
+
+const HeroContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+`;
+
+const HeroSubtitle = styled.p`
+  font-family: "DM Serif Display", serif;
+  font-size: 2rem;
+  color: #fafafa;
+`;
+
+const HeroForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  & select {
+    width: 70px;
+    height: 40px;
+    border: none;
+    padding: 5px 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+`;
+
+const HeroSecondList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 50px;
+  margin-top: 50px;
+`;
+
+const HeroLi = styled.li`
+  font-family: "Montserrat", sans-serif;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: #fafafa;
+  background-color: transparent;
+
+  ${(props) =>
+    props.isSelected &&
+    css`
+      color: #150f0f;
+      background-color: #ff6d16;
+      border: 1px solid red;
+    `}
+
+  &:hover {
+    border: 1px solid #ff6d16;
+  }
+`;
 
 const Hero = ({ category, setCategory, setLetter }) => {
   const onHandleClick = (value) => {
@@ -15,13 +91,13 @@ const Hero = ({ category, setCategory, setLetter }) => {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTVWYZ";
 
   return (
-    <div className={styles.Hero}>
-      <h1 className={styles.title}>
+    <HeroWrapper>
+      <HeroTitle>
         Find <em>your</em> best cocktail
-      </h1>
-      <div className={styles.HeroContent}>
-        <p className={styles.subtitle}>with letter</p>
-        <form className={styles.form}>
+      </HeroTitle>
+      <HeroContent>
+        <HeroSubtitle>with letter</HeroSubtitle>
+        <HeroForm>
           <select
             value={selectedLetter}
             onChange={handleChange}
@@ -34,41 +110,42 @@ const Hero = ({ category, setCategory, setLetter }) => {
               </option>
             ))}
           </select>
-        </form>
-      </div>
-      <ul className={styles.secondList}>
-        <li
+        </HeroForm>
+      </HeroContent>
+      <HeroSecondList>
+        <HeroLi
           onClick={() => onHandleClick("Cocktail")}
-          className={category === "Cocktail" && styles.active}
+          isSelected={category === "Cocktail"}
         >
           Cocktail
-        </li>
-        <li
+        </HeroLi>
+        <HeroLi
           onClick={() => onHandleClick("Ordinary Drink")}
-          className={category === "Ordinary Drink" && styles.active}
+          isSelected={category === "Ordinary Drink"}
         >
           Ordinary Drink
-        </li>
-        <li
+        </HeroLi>
+        <HeroLi
           onClick={() => onHandleClick("Shot")}
-          className={category === "Shot" && styles.active}
+          isSelected={category === "Shot"}
         >
           Shot
-        </li>
-        <li
+        </HeroLi>
+
+        <HeroLi
           onClick={() => onHandleClick("Punch / Party Drink")}
-          className={category === "Punch / Party Drink" && styles.active}
+          isSelected={category === "Punch / Party Drink"}
         >
           Punch
-        </li>
-        <li
+        </HeroLi>
+        <HeroLi
           onClick={() => onHandleClick("Coffee / Tea")}
-          className={category === "Coffee / Tea" && styles.active}
+          isSelected={category === "Coffee / Tea"}
         >
           Coffee
-        </li>
-      </ul>
-    </div>
+        </HeroLi>
+      </HeroSecondList>
+    </HeroWrapper>
   );
 };
 

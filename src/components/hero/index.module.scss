@@ -1,61 +1,61 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+// @import "../../styles/variables";
+// @import "../../styles/mixins";
 
-.Hero {
-  @include flex-container(column, center, center);
-  margin-top: 30px;
+// .Hero {
+//   @include flex-container(column, center, center);
+//   margin-top: 30px;
 
-  .HeroContent {
-    @include flex-container(row, center, center, 20px);
-  }
+//   .HeroContent {
+//     @include flex-container(row, center, center, 20px);
+//   }
 
-  .title {
-    font-family: $secondary-font;
-    font-size: 5rem;
-    color: $neutral-color;
-  }
+//   .title {
+//     font-family: $secondary-font;
+//     font-size: 5rem;
+//     color: $neutral-color;
+//   }
 
-  .subtitle {
-    font-family: $secondary-font;
-    font-size: 2rem;
-    color: $neutral-color;
-  }
+//   .subtitle {
+//     font-family: $secondary-font;
+//     font-size: 2rem;
+//     color: $neutral-color;
+//   }
 
-  .form {
-    select {
-      width: 70px;
-      height: 40px;
-      border: none;
-      padding: 5px 5px;
+//   .form {
+//     select {
+//       width: 70px;
+//       height: 40px;
+//       border: none;
+//       padding: 5px 5px;
 
-      &:focus {
-        outline: none;
-      }
-    }
-  }
+//       &:focus {
+//         outline: none;
+//       }
+//     }
+//   }
 
-  .secondList {
-    @include flex-container(row, center, center, 40px);
-    padding: 0;
-    list-style-type: none;
-    margin-bottom: 50px;
-    margin-top: 50px;
+//   .secondList {
+//     @include flex-container(row, center, center, 40px);
+//     padding: 0;
+//     list-style-type: none;
+//     margin-bottom: 50px;
+//     margin-top: 50px;
 
-    li {
-      font-family: $primary-font;
-      padding: 4px 8px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      color: $neutral-color;
+//     li {
+//       font-family: $primary-font;
+//       padding: 4px 8px;
+//       border: 1px solid transparent;
+//       cursor: pointer;
+//       color: $neutral-color;
 
-      &:hover {
-        border: 1px solid $active-color;
-      }
-    }
+//       &:hover {
+//         border: 1px solid $active-color;
+//       }
+//     }
 
-    .active {
-      background-color: $active-color;
-      color: $primary-color;
-    }
-  }
-}
+//     .active {
+//       background-color: $active-color;
+//       color: $primary-color;
+//     }
+//   }
+// }
