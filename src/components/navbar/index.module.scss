@@ -4,6 +4,7 @@
 .Navbar {
   @include flex-container(row, space-between, center);
   padding: 20px 12px;
+  width: 100vw;
 
   .logo {
     font-family: $secondary-font;
@@ -34,5 +35,14 @@
     border: 1px solid $active-color;
     padding: 5px 15px;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Navbar {
+    width: 100vw;
+    .list {
+      display: none !important;
+    }
   }
 }

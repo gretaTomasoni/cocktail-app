@@ -11,8 +11,11 @@ const HeroWrapper = styled.div`
 
 const HeroTitle = styled.h1`
   font-family: "DM Serif Display", serif;
+  text-align: center;
   font-size: 5rem;
   color: #fafafa;
+  line-height: 0.95em;
+  margin-bottom: 10px;
 `;
 
 const HeroContent = styled.div`
@@ -50,6 +53,7 @@ const HeroSecondList = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 40px;
+  flex-wrap: wrap;
   padding: 0;
   list-style-type: none;
   margin-bottom: 50px;
@@ -63,6 +67,7 @@ const HeroLi = styled.li`
   cursor: pointer;
   color: #fafafa;
   background-color: transparent;
+  margin-bottom: -20px;
 
   ${(props) =>
     props.isSelected &&

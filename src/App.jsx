@@ -15,6 +15,7 @@ const App = () => {
   const [singleItemContext, setSingleItemContext] = useState({
     isVisible: false,
     payload: {},
+    positionList: null,
   });
   const [letter, setLetter] = useState("m");
   const [reservationVisibility, setReservationVisibility] = useState(false);
@@ -42,8 +43,9 @@ const App = () => {
         <>
           {singleItemContext.isVisible ? (
             <ModalDrink
-              data={singleItemContext.payload}
+              data={singleItemContext}
               setSingleItemContext={setSingleItemContext}
+              filteredList={filteredList(cocktailList, "strCategory", category)}
             />
           ) : (
             <>

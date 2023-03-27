@@ -7,7 +7,7 @@ const Navbar = ({ setReservationVisibility, reservationVisibility }) => {
   return (
     <div className={styles.Navbar}>
       <span className={styles.logo}>Cocktail</span>
-      <ul>
+      <ul className={styles.list}>
         <li>Home</li>
         <li>Popular</li>
         <li>Search</li>

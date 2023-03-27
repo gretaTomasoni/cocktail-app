@@ -8,6 +8,7 @@
 }
 
 .ModalDrink {
+  width: 100%;
   font-family: $primary-font;
   color: $neutral-color;
   padding: 10px;
@@ -24,8 +25,8 @@
     margin-top: 30px;
 
     img {
-      width: 600px;
-      height: 600px;
+      width: 40%;
+      height: 40%;
       border-radius: 50px;
       border-top-left-radius: 200px;
       border-right: 2px solid $active-color;
@@ -34,7 +35,7 @@
 
     .text {
       @include flex-container(column, flex-start, flex-start, 20px);
-      width: 100%;
+      width: 60%;
 
       h1 {
         font-family: $secondary-font;
@@ -43,6 +44,7 @@
       }
 
       p {
+        width: 60%;
         color: $disabled-color;
         margin-top: -10px;
       }
@@ -53,8 +55,28 @@
 
         h3 {
           font-weight: 700;
-          margin-bottom: 5px;
+          margin-bottom: 15px;
         }
+      }
+      .carouselButton button {
+        cursor: pointer;
+        border: 1px solid $active-color;
+        padding: 5px 10px;
+        margin-right: 10px;
+        color: $active-color;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ModalDrink {
+    .card {
+      @include flex-container(column, center, flex-start, 30px);
+
+      img {
+        width: 100%;
       }
     }
   }
